@@ -49,7 +49,7 @@ yabai -m config --space mail  layout        stack
 yabai -m config --space games layout        float
 
 # window rules
-yabai -m rule --add app="^Mail$" space=mail
+yabai -m rule --add app="^Spark$" space=mail
 yabai -m rule --add app="^Safari$" space=web
 yabai -m rule --add app="^Notes$" space=notes
 yabai -m rule --add app="^ida64$" space=re
