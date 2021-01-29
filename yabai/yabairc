@@ -85,4 +85,10 @@ yabai -m config active_window_border_color   0xff$CACTV
 yabai -m config normal_window_border_color   0xff$CNORM
 yabai -m config insert_window_border_color   0xff$CINSE
 
+
+# Add a signal that sets the opacity of mpv based on it's focus
+yabai -m signal --add event=application_activated app="(mpv)" action='/Users/davidhsieh/.config/yabai/mpv_opacity'
+yabai -m signal --add event=application_deactivated app="(mpv)" action='/Users/davidhsieh/.config/yabai/mpv_opacity'
+
+
 echo "yabai configuration loaded.."
