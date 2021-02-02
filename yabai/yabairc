@@ -58,6 +58,7 @@ yabai -m rule --add app="^Music$" space=media
 yabai -m rule --add app="^Discord$" space=social grid=1:1:0:0:1:1 manage=off
 yabai -m rule --add app="^Steam$" space=games manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^mpv$" opacity=1.0
 
 # signals
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
@@ -87,8 +88,8 @@ yabai -m config insert_window_border_color   0xff$CINSE
 
 
 # Add a signal that sets the opacity of mpv based on it's focus
-yabai -m signal --add event=application_activated app="(mpv)" action='/Users/davidhsieh/.config/yabai/mpv_opacity'
-yabai -m signal --add event=application_deactivated app="(mpv)" action='/Users/davidhsieh/.config/yabai/mpv_opacity'
+#yabai -m signal --add event=application_activated app="(mpv)" action='/Users/davidhsieh/.config/yabai/mpv_opacity'
+#yabai -m signal --add event=application_deactivated app="(mpv)" action='/Users/davidhsieh/.config/yabai/mpv_opacity'
 
 
 echo "yabai configuration loaded.."
