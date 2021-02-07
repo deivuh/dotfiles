@@ -51,13 +51,19 @@ yabai -m config --space games layout        float
 # window rules
 yabai -m rule --add app="^Spark$" space=mail
 yabai -m rule --add app="^Safari$" space=web
-yabai -m rule --add app="^Notes$" space=notes
+yabai -m rule --add app="^Notes$" space=note
+yabai -m rule --add app="^Bear$" space=notes
+yabai -m rule --add app="^Noteplan$" space=notes
+yabai -m rule --add app="^Craft$" space=notes
 yabai -m rule --add app="^ida64$" space=re
 yabai -m rule --add app="^Transmission$" space=media
 yabai -m rule --add app="^Music$" space=media
 yabai -m rule --add app="^Discord$" space=social grid=1:1:0:0:1:1 manage=off
 yabai -m rule --add app="^Steam$" space=games manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^mpv$" opacity=1.0
+yabai -m rule --add app="^macfeh$" opacity=1.0
+
 
 # signals
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
@@ -84,5 +90,11 @@ yabai -m config window_border_width          4
 yabai -m config active_window_border_color   0xff$CACTV
 yabai -m config normal_window_border_color   0xff$CNORM
 yabai -m config insert_window_border_color   0xff$CINSE
+
+
+# Add a signal that sets the opacity of mpv based on it's focus
+#yabai -m signal --add event=application_activated app="(mpv)" action='/Users/davidhsieh/.config/yabai/mpv_opacity'
+#yabai -m signal --add event=application_deactivated app="(mpv)" action='/Users/davidhsieh/.config/yabai/mpv_opacity'
+
 
 echo "yabai configuration loaded.."
